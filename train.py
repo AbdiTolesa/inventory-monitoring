@@ -17,7 +17,9 @@ import warnings
 from PIL import ImageFile
 import argparse 
 
-os.system("pip install smdebug")
+# os.system("pip install awscli --upgrade")
+os.system("pip uninstall awscli -y")
+os.system("pip install smdebug awscli")
 from smdebug import modes
 from smdebug.profiler.utils import str2bool
 from smdebug.pytorch import get_hook
@@ -33,7 +35,7 @@ def test(model, test_loader, loss_criterion):
           testing data loader and will get the test accuray/loss of the model
           Remember to include any debugging/profiling hooks that you might need
     '''
-    
+    print("TESTING PHASE...")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     loss_optim = loss_criterion
@@ -74,7 +76,7 @@ def train(model, train_loader, criterion, optimizer, args):
         model.train()
         train_loss = 0
         for batch_idx, (data, target) in enumerate(train_loader, 1):
-            print("TRAINING...with {} epochs, batch_idx:{}, len(train_loader):{}".format(args.epochs, batch_idx, len(train_loader)))
+            print("TRAINING PHASE. Epoch {}, batch_idx:{}, length of train_loader: {}".format(epoch, batch_idx, len(train_loader)))
             data, target = data.to(device), target.to(device)
             optimizer.zero_grad()
             output = model(data)
@@ -119,7 +121,7 @@ def save_model(model, model_dir):
     torch.save(model.cpu().state_dict(), path)
 
 def model_fn(model_dir):
-    model = Net()
+    model = net()
     with open(os.path.join(model_dir, "model.pth"), "rb") as f:
         model.load_state_dict(torch.load(f))
     return model
