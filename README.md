@@ -22,10 +22,9 @@ A pretrained version of ResNet50 is used to build the model to save time than tr
 
 SageMaker's [hyperparameter tuning job](https://sagemaker.readthedocs.io/en/stable/api/training/tuner.html) is used to pick the best hyperparameters to train our algorithm from a range of values given. The hyperparameters specified are the number of epochs, batch-size and learning-rate as they are commonly used and affect the model's performance at large.
 
-I have used [PyTorch with the SageMaker Python SDK](https://sagemaker.readthedocs.io/en/stable/frameworks/pytorch/using_pytorch.html#save-the-model) is used for implementing training the algorithm.
+[PyTorch with the SageMaker Python SDK](https://sagemaker.readthedocs.io/en/stable/frameworks/pytorch/using_pytorch.html#save-the-model) is used for implementing training the algorithm.
 
-
-
+## Inference
 The model takes in an image and then gives an output of an integer that is a prediction of the number of objects in the bin.
 
 ## Machine Learning Pipeline
