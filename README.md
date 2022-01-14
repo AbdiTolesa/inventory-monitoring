@@ -4,17 +4,16 @@ As a leader in the industry, AWS has been making a tremendous effort to improve 
 
 
 ## Project Set Up and Installation
-This project requires setting up Amazon SageMaker studio. If you have not setup that and not sure how to do it, please refer to [this link](https://docs.aws.amazon.com/sagemaker/latest/dg/onboard-quick-start.html)
+This project requires setting up Amazon SageMaker studio. If you have not done that and not sure how to do it, please refer to [this link](https://docs.aws.amazon.com/sagemaker/latest/dg/onboard-quick-start.html)
 
 ## Dataset
 
 ### Overview
-**TODO**: Explain about the data you are using and where you got it from.
-The Amazon Bin Image Dataset contains images and metadata from bins of a pod in an operating Amazon Fulfillment Center. The bin images in this dataset are captured as robot units carry pods as part of normal Amazon Fulfillment Center operations. You can download and find the details at [here](https://aws.amazon.com/ko/public-datasets/amazon-bin-images/). 
+The Amazon Bin Image Dataset contains images and metadata from bins of a pod in an operating Amazon Fulfillment Center. The bin images in this dataset are captured as robot units carry pods as part of normal Amazon Fulfillment Center operations. You can download and find the details at [here](https://aws.amazon.com/ko/public-datasets/amazon-bin-images/). The dataset has over 500,000 bin JPEG images and corresponding JSON metadata files describing items in bins in Amazon Fulfillment Centers.
 
 ### Access
 **TODO**: Explain how you are accessing the data in AWS and how you uploaded it
-The data is downloaded from the source and then rearranged to make it convenient for the Deep Learning algorithm in such a way that the images are placed in their respective directory name that represents the number of objects in the bins. There is a function written to achieve that. A script is also written to split the dataset into train and validation sets with the recommended 80%-20% ratio.
+The data is downloaded from the source and then rearranged to make it convenient for the Deep Learning algorithm in such a way that the images are placed in their respective directory name that represents the number of objects in the bins. The function `download_and_arrange_data()` does that by using the `file_list.json` file, which contains a subset of file names used to train our model, since the original dataset is very large. There is a function written to achieve that. A script is also written to split the dataset into train and validation sets with the recommended 80%-20% ratio.
 AWS CLI is then used to upload the data to AWS S3 bucket.
 
 ## Model Training
