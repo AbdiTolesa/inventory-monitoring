@@ -28,6 +28,9 @@ SageMaker's [hyperparameter tuning job](https://sagemaker.readthedocs.io/en/stab
 The model takes in an image and then gives an output of an integer that is a prediction of the number of objects in the bin.
 
 ## Machine Learning Pipeline
+The following workflow shows the different steps in the process.
+<img width="907" alt="screenshot-2021-07-19-at-5 56 58-pm" src="https://user-images.githubusercontent.com/41271840/149535262-bc0aa1b3-1ecb-4529-80b4-df58ebdc0b99.png">
+
 Generally, the ML workflow consists of the following pattern:
 
 - Preprocessing
@@ -37,4 +40,4 @@ Generally, the ML workflow consists of the following pattern:
 First of all, the dataset is downloaded and arranged based on a json file containing the partial list of files used to train the model. This is just for the save of saving time and cost as the original dataset is very huge, 500,000 images. The data is then uploaded to AWS S3 bucket to be consumed by the training script later in the training phase. A PyTorch estimator is created in SageMaker studio that infers the training script's location as one of its parameters along with the hyperparameters to be used. 
 
 ## Evaluation
-The performance that is achieved in the setup and options described would yield an accuracy of 32%. Although this is a very low performance, it is so because of the size of the subset of data used.
+The performance that is achieved by using a fraction of the whole dataset as described above yields an accuracy of about 32% on the test set. The performance is so low because of the size of the subset of data used is small.
