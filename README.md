@@ -28,8 +28,9 @@ SageMaker's [hyperparameter tuning job](https://sagemaker.readthedocs.io/en/stab
 The model takes in an image and then gives an output of an integer that is a prediction of the number of objects in the bin.
 
 ## Machine Learning Pipeline
-**TODO:** Explain your project pipeline.
-To explain about the ML Pipeline used in this project, first of all, the dataset is downloaded and arranged based on a json file containing the partial list of files used to train the model. This is just for the save of saving time and cost as the original dataset is very huge, 500,000 images. The data is then uploaded to AWS S3 bucket to be consumed by the training script later in the training phase. A PyTorch estimator is created in SageMaker studio that infers the training script's location as one of its parameters along with the hyperparameters to be used. The performance that is achieved in the setup and options described would yield an accuracy of 32%. Although this is a very low performance, it is so because of the size of the subset of data used.
+![Udacity Capstone Project Rubric](https://user-images.githubusercontent.com/41271840/149509294-7220a731-7aed-4629-b674-454e7f64d579.png)
 
-## Standout Suggestions
-**TODO (Optional):** This is where you can provide information about any standout suggestions that you have attempted.
+First of all, the dataset is downloaded and arranged based on a json file containing the partial list of files used to train the model. This is just for the save of saving time and cost as the original dataset is very huge, 500,000 images. The data is then uploaded to AWS S3 bucket to be consumed by the training script later in the training phase. A PyTorch estimator is created in SageMaker studio that infers the training script's location as one of its parameters along with the hyperparameters to be used. 
+
+## Evaluation
+The performance that is achieved in the setup and options described would yield an accuracy of 32%. Although this is a very low performance, it is so because of the size of the subset of data used.
