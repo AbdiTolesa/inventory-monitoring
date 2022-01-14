@@ -28,8 +28,12 @@ SageMaker's [hyperparameter tuning job](https://sagemaker.readthedocs.io/en/stab
 The model takes in an image and then gives an output of an integer that is a prediction of the number of objects in the bin.
 
 ## Machine Learning Pipeline
-![Udacity Capstone Project Rubric](https://user-images.githubusercontent.com/41271840/149509294-7220a731-7aed-4629-b674-454e7f64d579.png)
+Generally, the ML workflow consists of the following pattern:
 
+- Preprocessing
+- Training
+- Evaluation
+- Deployment
 First of all, the dataset is downloaded and arranged based on a json file containing the partial list of files used to train the model. This is just for the save of saving time and cost as the original dataset is very huge, 500,000 images. The data is then uploaded to AWS S3 bucket to be consumed by the training script later in the training phase. A PyTorch estimator is created in SageMaker studio that infers the training script's location as one of its parameters along with the hyperparameters to be used. 
 
 ## Evaluation
