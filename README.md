@@ -1,13 +1,10 @@
-**NOTE:** This file is a template that you can use to create the README for your project. The **TODO** comments below will highlight the information you should be sure to include.
+# Deep Learning model for Inventory Monitoring at Amazon Distribution Centers
 
-# Your Project Title Here
-
-**TODO:** Write a short introduction to your project.
 As a leader in the industry, AWS has been making a tremendous effort to improve operational efficiency in its Distribution Centers. The increasingly usage of robots to move objects for fulfillment of customer orders is one of those moves acted towards that. Robots are used to move objects into bins. This project is about building a model that can count the number of objects in each bin. A system like this can be used to track inventory and make sure that delivery consignments have the correct number of items.
 
 
 ## Project Set Up and Installation
-**OPTIONAL:** If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to make your `README` detailed and self-explanatory. For instance, here you could explain how to set up your project in AWS and provide helpful screenshots of the process.
+This project requires setting up Amazon SageMaker studio. If you have not setup that and not sure how to do it, please refer to [this link](https://docs.aws.amazon.com/sagemaker/latest/dg/onboard-quick-start.html)
 
 ## Dataset
 
